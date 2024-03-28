@@ -36,7 +36,7 @@ class App:
         load_dotenv()
 
     def load_plugins(self):
-        plugins_package = 'app.plugins'
+        plugins_package = 'app.OptionsPlugins'
         for _, plugin_name, is_pkg in pkgutil.iter_modules([plugins_package.replace('.', '/')]):
             if is_pkg:
                 plugin_module = importlib.import_module(f'{plugins_package}.{plugin_name}')
@@ -49,7 +49,7 @@ class App:
                         continue
 
         # Registra el comando de menú
-        self.command_handler.register_command('menu', MenuCommand())
+        self.command_handler.register_command('Menu', MenuCommand())
 
     def start(self):
         self.load_plugins()
@@ -69,7 +69,8 @@ class App:
             else:
                 # Ejecutar el comando y registrar el resultado en el historial
                 result = self.command_handler.execute_command(user_input)
-                self.history = self.history.append({'Operation': user_input, 'Result': result}, ignore_index=True)
+                self.history = pd.concat([self.history, pd.DataFrame({'Operation': [user_input], 'Result': [result]})], ignore_index=True)
+
 
 if __name__ == "__main__":
     app = App()

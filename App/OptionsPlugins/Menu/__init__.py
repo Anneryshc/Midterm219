@@ -12,7 +12,7 @@ def show_menu():
     command_handler = CommandHandler()
 
     # Obtener la lista de carpetas en la carpeta 'plugins'
-    plugin_folders = [folder for folder in os.listdir('app/plugins') if os.path.isdir(os.path.join('app/plugins', folder))]
+    plugin_folders = [folder for folder in os.listdir('app/OptionsPlugins') if os.path.isdir(os.path.join('app/OptionsPlugins', folder))]
 
     # Registrar el encabezado "Available commands:"
     logging.info("Available commands:")

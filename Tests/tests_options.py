@@ -1,10 +1,6 @@
-"""
-Test commands
-"""
-
 from io import StringIO
 import pytest
-
+from app import App
 from app.OptionsPlugins.Addition import Addition
 from app.OptionsPlugins.Subtraction import SubtractionCommand
 from app.OptionsPlugins.Multiplication import Multiplicationcommand
