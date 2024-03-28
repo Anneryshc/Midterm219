@@ -2,9 +2,9 @@ import pkgutil
 import importlib
 import logging
 import pandas as pd  # Importar Pandas para la gestión del historial
-from app.commands import CommandHandler
-from app.commands import Command
-from app.plugins.menu import MenuCommand
+from app.CommandLogging import CommandHandler
+from app.CommandLogging import Command
+from app.OptionsPlugins.Menu import MenuCommand
 from dotenv import load_dotenv
 import os
 

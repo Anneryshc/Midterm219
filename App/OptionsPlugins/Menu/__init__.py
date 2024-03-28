@@ -1,8 +1,8 @@
 import os
 import sys
 import logging  # Agregar logging
-from App.CommandLogging import CommandHandler
-from App.CommandLogging import Command
+from app.CommandLogging import CommandHandler
+from app.CommandLogging import Command
 
 class MenuCommand(Command):
     def execute(self):

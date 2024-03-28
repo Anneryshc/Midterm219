@@ -1,6 +1,6 @@
 import sys
 import logging
-from App.CommandLogging import Command
+from app.CommandLogging import Command
 
 class DivisionCommand(Command):
     def execute(self):
