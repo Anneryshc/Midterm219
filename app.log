@@ -415,3 +415,48 @@
 2024-03-29 13:41:18,294 - INFO - Operation: Division, Result: 5.0
 2024-03-29 13:41:21,824 - INFO - User input: exit
 2024-03-29 13:41:21,824 - INFO - Exiting...
+2024-03-29 13:58:40,070 - INFO - User input: Multiplicaction
+2024-03-29 13:58:40,077 - INFO - Operation: Multiplicaction, Result: None
+2024-03-29 13:58:51,633 - INFO - User input: Multiplication
+2024-03-29 13:58:54,010 - INFO - Performing multiplication...
+2024-03-29 13:58:54,010 - INFO - The multiplication of 6.0 and 6.0 is : 36.0
+2024-03-29 13:58:54,011 - INFO - Operation: Multiplication, Result: 36.0
+2024-03-29 13:59:58,476 - INFO - User input: Addition
+2024-03-29 13:59:59,971 - ERROR - Invalid input: Please enter valid numbers.
+2024-03-29 13:59:59,973 - INFO - Operation: Addition, Result: None
+2024-03-29 14:00:02,484 - INFO - User input: Addition
+2024-03-29 14:00:04,048 - INFO - Performing addition...
+2024-03-29 14:00:04,048 - INFO - The addition of 5.0 and 5.0 is : 10.0
+2024-03-29 14:00:04,049 - INFO - Operation: Addition, Result: 10.0
+2024-03-29 14:00:11,878 - INFO - User input: SUbtraction
+2024-03-29 14:00:11,878 - INFO - Operation: SUbtraction, Result: None
+2024-03-29 14:00:13,001 - INFO - User input: 5
+2024-03-29 14:00:13,005 - INFO - Operation: 5, Result: None
+2024-03-29 14:00:23,298 - INFO - User input: Subtraction
+2024-03-29 14:00:25,355 - INFO - Performing subtraction...
+2024-03-29 14:00:25,355 - INFO - The subtraction of 5.0 and 3.0 is : 2.0
+2024-03-29 14:00:25,355 - INFO - Operation: Subtraction, Result: 2.0
+2024-03-29 14:00:30,116 - INFO - User input: Division
+2024-03-29 14:00:30,116 - INFO - Starting division operation
+2024-03-29 14:00:32,148 - INFO - User input: 25.0, 5.0
+2024-03-29 14:00:32,148 - INFO - Division result: 5.0
+2024-03-29 14:00:32,148 - INFO - Division operation completed successfully
+2024-03-29 14:00:32,151 - INFO - Operation: Division, Result: 5.0
+2024-03-29 14:00:36,724 - INFO - User input: Multiplication
+2024-03-29 14:00:38,480 - INFO - Performing multiplication...
+2024-03-29 14:00:38,480 - INFO - The multiplication of 6.0 and 5.0 is : 30.0
+2024-03-29 14:00:38,481 - INFO - Operation: Multiplication, Result: 30.0
+2024-03-29 14:00:44,353 - INFO - User input: exit
+2024-03-29 14:00:44,353 - INFO - Exiting...
+2024-03-29 14:01:08,857 - INFO - User input: Multiplication
+2024-03-29 14:01:10,352 - INFO - Performing multiplication...
+2024-03-29 14:01:10,352 - INFO - The multiplication of 5.0 and 5.0 is : 25.0
+2024-03-29 14:01:10,352 - INFO - Operation: Multiplication, Result: 25.0
+2024-03-29 14:01:14,052 - INFO - User input: exit
+2024-03-29 14:01:14,052 - INFO - Exiting...
+2024-03-29 14:01:48,034 - INFO - User input: Multiplication
+2024-03-29 14:01:49,833 - INFO - Performing multiplication...
+2024-03-29 14:01:49,835 - INFO - The multiplication of 5.0 and 5.0 is : 25.0
+2024-03-29 14:01:49,839 - INFO - Operation: Multiplication, Result: 25.0
+2024-03-29 14:02:00,654 - INFO - User input: exit
+2024-03-29 14:02:00,655 - INFO - Exiting...
