@@ -19,9 +19,10 @@ class CommandHandler:
 
     def execute_command(self, command_name: str):
         try:
-            self.commands[command_name].execute()
+            return self.commands[command_name].execute()  # Devolver el resultado de la operación ejecutada por el comando
         except KeyError:
             print(f"No such command: {command_name}")
+            return None
 
     def get_available_commands(self):
         return self.commands

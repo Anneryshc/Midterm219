@@ -3,7 +3,14 @@ import logging
 from app.CommandLogging import Command
 
 class MultiplicationCommand(Command):
+    """
+    A command to perform multiplication of two numbers.
+    """
+
     def execute(self):
+        """
+        Executes the multiplication command.
+        """
         try:
             num1 = float(input("Enter the first number: "))
             num2 = float(input("Enter the second number: "))
@@ -18,11 +25,13 @@ class MultiplicationCommand(Command):
             print(f"The multiplication of {num1} and {num2} is : {result}")
             logging.info(f"The multiplication of {num1} and {num2} is : {result}")
             
+            return result  # Devolver el resultado de la multiplicación
+            
         except ValueError:
             # Registro de error en caso de entrada no válida
             print("Error: Please enter valid numbers.")
             logging.error("Error: Please enter valid numbers.")
 
-# Llama a la función para ejecutarla directamente al importar el módulo
 if __name__ == "__main__":
     MultiplicationCommand().execute()
+

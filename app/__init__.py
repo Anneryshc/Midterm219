@@ -10,31 +10,26 @@ import os
 class App:
     def __init__(self):
         self.command_handler = CommandHandler()
-        self.is_running = True  # Eliminado el punto y coma
-        self.user_input = None  # Eliminado el punto y coma
+        self.is_running = True
+        self.user_input = None
         
-        # Configurar loggings
         logging.basicConfig(filename='app.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
         self.logger = logging.getLogger(__name__)
 
-        # Configurar un manejador adicional para mostrar mensajes de nivel INFO en la consola
         console_handler = logging.StreamHandler()
         console_handler.setLevel(logging.INFO)
         console_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
         self.logger.addHandler(console_handler)
 
-        # Cargar variables de entorno desde el archivo .env
         try:
             load_dotenv() 
         except Exception as e:
             self.logger.error(f"Error loading environment variables: {e}")
 
-        # Obtener la ruta de la carpeta de datos desde la variable de entorno o establecer una ruta predeterminada
         self.data_directory = os.getenv('DATA_DIR', 'data')
         if not os.path.exists(self.data_directory):
             os.makedirs(self.data_directory)
 
-        # Crear o cargar el archivo de historial de cálculos con Pandas
         self.history_file = os.path.join(self.data_directory, 'calc_history.csv')
         if os.path.exists(self.history_file):
             self.history = pd.read_csv(self.history_file)
@@ -55,7 +50,6 @@ class App:
                     except TypeError:
                         continue
 
-        # Registra el comando de menú
         self.command_handler.register_command('Menu', MenuCommand())
 
     def start(self):
@@ -74,7 +68,8 @@ class App:
                 raise SystemExit
             else:
                 result = self.command_handler.execute_command(user_input)
-                self.history = pd.concat([self.history, pd.DataFrame({'Operation': [user_input], 'Result': [result]})], ignore_index=True)
+                self.history = pd.concat([self.history, pd.DataFrame({'Operation': [user_input], 'Result': [result]})], ignore_index=True)  # Actualiza el historial con el resultado
+                self.logger.info(f"Operation: {user_input}, Result: {result}")
 
 if __name__ == "__main__":
     app = App()

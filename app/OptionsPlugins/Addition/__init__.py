@@ -30,6 +30,8 @@ class Addition(Command):
             print(f"The addition of {num1} and {num2} is : {result}")
             logging.info(f"The addition of {num1} and {num2} is : {result}")
             
+            return result  # Devolver el resultado de la suma
+            
         except ValueError:
             # Registro de error en caso de entrada no válida
             print("Error: Please enter valid numbers.")
@@ -37,4 +39,4 @@ class Addition(Command):
 
 if __name__ == "__main__":
     Addition().execute()
-    
+

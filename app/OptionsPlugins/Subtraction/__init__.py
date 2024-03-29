@@ -18,6 +18,8 @@ class SubtractionCommand(Command):
             print(f"The subtraction of {num1} and {num2} is : {result}")
             logging.info(f"The subtraction of {num1} and {num2} is : {result}")
             
+            return result  # Devolver el resultado de la resta
+            
         except ValueError:
             # Registro de error en caso de entrada no válida
             print("Error: Please enter valid numbers.")
