@@ -29,12 +29,11 @@ class App:
         except Exception as e:
             self.logger.error(f"Error loading environment variables: {e}")
 
-        # Obtener la ruta de la carpeta de datos desde la variable de entorno
-        self.data_directory = os.getenv('DATA_DIR')
-        if self.data_directory is None:
-            self.logger.error("Error: DATA_DIR variable de entorno no configurada.")
-            raise ValueError("DATA_DIR variable de entorno no configurada.")
-        
+        # Obtener la ruta de la carpeta de datos desde la variable de entorno o establecer una ruta predeterminada
+        self.data_directory = os.getenv('DATA_DIR', 'data')
+        if not os.path.exists(self.data_directory):
+            os.makedirs(self.data_directory)
+
         # Crear o cargar el archivo de historial de cálculos con Pandas
         self.history_file = os.path.join(self.data_directory, 'calc_history.csv')
         if os.path.exists(self.history_file):
@@ -80,3 +79,4 @@ class App:
 if __name__ == "__main__":
     app = App()
     app.start()
+
