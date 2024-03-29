@@ -6,7 +6,7 @@ import logging
 import pytest
 from app.OptionsPlugins.Addition import Addition
 from app.OptionsPlugins.Subtraction import SubtractionCommand
-from app.OptionsPlugins.Multiplication import Multiplicationcommand
+from app.OptionsPlugins.Multiplication import MultiplicationCommand
 from app.OptionsPlugins.Division import DivisionCommand
 from app.OptionsPlugins.Menu import show_menu
 
@@ -141,17 +141,32 @@ def test_division_command_invalid_input(capfd, monkeypatch, mock_input, caplog):
     expected_message = "Please enter valid numbers."
     assert expected_message in logs
 
-def test_multiplication_command_invalid_input(capfd, monkeypatch, mock_input, caplog):
+def test_multiplication_command(capfd, monkeypatch):
+    """Test para el comando de multiplicación."""
+    # Simulamos que el usuario ingresa dos números
+    inputs = iter(['5', '7'])
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+
+    # Ejecutamos el comando de multiplicación
+    MultiplicationCommand().execute()
+
+    # Capturamos la salida de la aplicación
+    captured = capfd.readouterr()
+
+    # Verificamos si la multiplicación se realizó correctamente y el resultado se imprimió
+    assert "The multiplication of 5.0 and 7.0 is : 35.0\n" in captured.out, "The multiplication was not done correctly"
+
+def test_multiplication_command_invalid_input(capfd, monkeypatch, caplog):
     """Test para el comando de multiplicación con entrada inválida."""
     # Configurar el logger
     caplog.set_level(logging.ERROR)
 
     # Simulamos que el usuario ingresa un valor inválido seguido de un número válido
-    mock_input.write('invalid\n3\n')
-    mock_input.seek(0)
+    inputs = iter(['invalid', '3'])
+    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
     # Ejecutamos el comando de multiplicación
-    Multiplicationcommand().execute()
+    MultiplicationCommand().execute()
 
     # Capturamos los registros del logger
     logs = caplog.text

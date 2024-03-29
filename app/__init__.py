@@ -53,7 +53,7 @@ class App:
 
     def start(self):
         self.load_plugins()
-        print("Type 'exit' to exit.")
+        print("Type 'exit' to exit,For more information write 'Menu'")
         while self.is_running:
             if self.user_input is not None:
                 user_input = self.user_input  # Utilizar la entrada proporcionada
