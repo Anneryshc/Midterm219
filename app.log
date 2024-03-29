@@ -104,3 +104,15 @@
 2024-03-28 22:20:50,149 - WARNING - Warning: Division by zero can lead to unexpected results.
 2024-03-28 22:22:56,048 - INFO - User input: exit
 2024-03-28 22:22:56,048 - INFO - Exiting...
+2024-03-28 23:00:29,907 - INFO - User input: Menu
+2024-03-28 23:00:29,909 - INFO - Available commands:
+2024-03-28 23:00:29,910 - INFO -  - Addition
+2024-03-28 23:00:29,910 - INFO -  - Division
+2024-03-28 23:00:29,910 - INFO -  - exit
+2024-03-28 23:00:29,910 - INFO -  - Menu
+2024-03-28 23:00:29,911 - INFO -  - Multiplication
+2024-03-28 23:00:29,911 - INFO -  - Subtraction
+2024-03-28 23:00:29,911 - INFO -  - __pycache__
+2024-03-28 23:00:43,483 - INFO - User input: Addition
+2024-03-28 23:01:09,317 - INFO - User input: exit
+2024-03-28 23:01:09,318 - INFO - Exiting...
