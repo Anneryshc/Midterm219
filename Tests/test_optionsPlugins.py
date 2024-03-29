@@ -1,13 +1,15 @@
+"""
+Test de comandos.
+"""
 from io import StringIO
+import logging
 import pytest
-
-from app import App
 from app.OptionsPlugins.Addition import Addition
 from app.OptionsPlugins.Subtraction import SubtractionCommand
 from app.OptionsPlugins.Multiplication import Multiplicationcommand
 from app.OptionsPlugins.Division import DivisionCommand
-import logging
 from app.OptionsPlugins.Menu import show_menu
+
 
 @pytest.fixture
 def mock_input(monkeypatch):
@@ -17,6 +19,7 @@ def mock_input(monkeypatch):
     return user_input
 
 def test_app_menu_command(capsys, caplog):
+    """Test para verificar el menú de la aplicación."""
     # Configurar el logger
     caplog.set_level(logging.INFO)
 
@@ -51,7 +54,6 @@ def test_addition_command(capfd, monkeypatch):
     # Verificamos si la suma se realizó correctamente y el resultado se imprimió
     assert "The addition of 5.0 and 7.0 is : 12.0\n" in captured.out, "The addition was not done correctly"
 
-
 def test_subtraction_command_valid_input(capfd, monkeypatch):
     """Test para el comando de resta con entrada válida."""
     # Simulamos que el usuario ingresa dos números
@@ -85,9 +87,7 @@ def test_subtraction_command_invalid_input(capfd, monkeypatch, caplog):
     # Verificamos si se generó el mensaje de error esperado
     assert "Error: Please enter valid numbers." in logs
 
-
-
-def test_division_command_valid_input(capfd, monkeypatch, mock_input):
+def test_division_command_valid_input(capfd, monkeypatch, mock_input, caplog):
     """Test para el comando de división con entrada válida."""
     # Simulamos que el usuario ingresa dos números válidos
     mock_input.write('6\n3\n')
@@ -100,7 +100,7 @@ def test_division_command_valid_input(capfd, monkeypatch, mock_input):
     captured = capfd.readouterr()
 
     # Verificamos si la división se realizó correctamente y el resultado se imprimió
-    assert "the Division 6.0 and 3.0 is : 2.0" in captured.out
+    assert "The division of 6.0 and 3.0 is : 2.0" in captured.out
 
 def test_division_command_invalid_input(capfd, monkeypatch, mock_input, caplog):
     """Test para el comando de división con entrada inválida."""
@@ -118,8 +118,9 @@ def test_division_command_invalid_input(capfd, monkeypatch, mock_input, caplog):
     logs = caplog.text
 
     # Verificamos si se generó el mensaje de error esperado
-    assert "Error: Please enter valid numbers." in logs
-
+    assert "Please enter valid numbers." in logs
+    expected_message = "Please enter valid numbers."
+    assert expected_message in logs
 
 def test_multiplication_command_invalid_input(capfd, monkeypatch, mock_input, caplog):
     """Test para el comando de multiplicación con entrada inválida."""
