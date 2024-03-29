@@ -170,3 +170,39 @@
 2024-03-28 23:36:07,401 - INFO -  - Subtraction
 2024-03-28 23:36:12,639 - INFO - User input: exit
 2024-03-28 23:36:12,639 - INFO - Exiting...
+2024-03-28 23:48:02,234 - INFO - User input: Menu
+2024-03-28 23:48:02,237 - INFO - Available commands:
+2024-03-28 23:48:02,237 - INFO -  - Addition
+2024-03-28 23:48:02,237 - INFO -  - Division
+2024-03-28 23:48:02,237 - INFO -  - exit
+2024-03-28 23:48:02,238 - INFO -  - Menu
+2024-03-28 23:48:02,238 - INFO -  - Multiplication
+2024-03-28 23:48:02,238 - INFO -  - Subtraction
+2024-03-28 23:48:09,204 - INFO - User input: Division
+2024-03-28 23:48:09,204 - INFO - Starting division operation
+2024-03-28 23:48:18,290 - INFO - User input: 25.0, 5.0
+2024-03-28 23:48:18,290 - INFO - Division result: 5.0
+2024-03-28 23:48:18,290 - INFO - Division operation completed successfully
+2024-03-28 23:50:46,385 - INFO - User input: exit
+2024-03-28 23:50:46,385 - INFO - Exiting...
+2024-03-28 23:51:09,218 - INFO - User input: Subtraction
+2024-03-28 23:51:14,446 - INFO - Performing subtraction...
+2024-03-28 23:51:14,446 - INFO - The subtraction of 5.0 and 3.0 is : 2.0
+2024-03-28 23:51:23,999 - INFO - User input: Subtraction
+2024-03-28 23:51:28,903 - INFO - Performing subtraction...
+2024-03-28 23:51:28,903 - INFO - The subtraction of 3.0 and 5.0 is : -2.0
+2024-03-28 23:52:57,167 - INFO - User input: exit
+2024-03-28 23:52:57,172 - INFO - Exiting...
+2024-03-29 00:01:55,933 - INFO - User input: Addition
+2024-03-29 00:01:58,373 - ERROR - Invalid input: Please enter valid numbers.
+2024-03-29 00:02:00,928 - INFO - User input: Addition
+2024-03-29 00:02:03,797 - INFO - Performing addition...
+2024-03-29 00:02:03,797 - INFO - The addition of 5.0 and 5.0 is : 10.0
+2024-03-29 00:02:07,947 - INFO - User input: exit
+2024-03-29 00:02:07,947 - INFO - Exiting...
+2024-03-29 00:03:37,822 - INFO - User input: Addition
+2024-03-29 00:03:45,418 - WARNING - Performing addition with negative numbers.
+2024-03-29 00:03:45,418 - INFO - Performing addition...
+2024-03-29 00:03:45,418 - INFO - The addition of -2.0 and -8.0 is : -10.0
+2024-03-29 00:29:03,628 - INFO - User input: exit
+2024-03-29 00:29:03,628 - INFO - Exiting...
