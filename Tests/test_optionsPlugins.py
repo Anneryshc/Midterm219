@@ -53,7 +53,7 @@ def test_addition_command(capfd, monkeypatch):
 
     # Verificamos si la suma se realizó correctamente y el resultado se imprimió
     assert "The addition of 5.0 and 7.0 is : 12.0\n" in captured.out, "The addition was not done correctly"
-    
+
 def test_addition_command_negative_numbers(capfd, monkeypatch):
     """Test para el comando de suma con números negativos."""
     # Simulamos que el usuario ingresa dos números negativos
@@ -105,7 +105,7 @@ def test_subtraction_command_invalid_input(capfd, monkeypatch, caplog):
 
     # Verificamos si se generó el mensaje de error esperado
     assert "Error: Please enter valid numbers." in logs
-    
+
 def test_division_command_valid_input(capfd, monkeypatch, mock_input, caplog):
     """Test para el comando de división con entrada válida."""
     # Simulamos que el usuario ingresa dos números válidos

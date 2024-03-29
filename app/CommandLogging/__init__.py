@@ -25,4 +25,4 @@ class CommandHandler:
             return None
 
     def get_available_commands(self):
-        return self.commands
+        return list(self.commands.keys())
