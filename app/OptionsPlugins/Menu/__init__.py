@@ -19,6 +19,8 @@ def show_menu():
 
     # Escribir los comandos del menú en sys.stdout
     for plugin_folder in plugin_folders:
-        command = f" - {plugin_folder}"
-        sys.stdout.write(command + '\n')
-        logging.info(command)
+        # Ignorar el directorio __pycache__ dentro de la carpeta menu
+        if plugin_folder != "__pycache__":
+            command = f" - {plugin_folder}"
+            sys.stdout.write(command + '\n')
+            logging.info(command)

@@ -3,3 +3,5 @@
 .pytest_cache
 venv/
 .env
+__pycache__/
+app/Menu/__pycache__/ 
