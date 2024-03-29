@@ -59,3 +59,17 @@
 2024-03-28 15:17:32,672 - INFO - User input: exit'
 2024-03-28 15:17:35,493 - INFO - User input: exit
 2024-03-28 15:17:35,493 - INFO - Exiting...
+2024-03-28 15:31:56,470 - INFO - User input: Menu
+2024-03-28 15:31:56,471 - INFO - Available commands:
+2024-03-28 15:31:56,473 - INFO -  - Addition
+2024-03-28 15:31:56,473 - INFO -  - Division
+2024-03-28 15:31:56,473 - INFO -  - exit
+2024-03-28 15:31:56,474 - INFO -  - Menu
+2024-03-28 15:31:56,474 - INFO -  - Multiplication
+2024-03-28 15:31:56,474 - INFO -  - Subtraction
+2024-03-28 15:31:56,474 - INFO -  - __pycache__
+2024-03-28 15:32:01,269 - INFO - User input: Addition
+2024-03-28 15:32:02,939 - ERROR - Invalid input: Please enter valid numbers.
+2024-03-28 15:32:04,073 - INFO - User input: 
+2024-03-28 15:32:19,386 - INFO - User input: exit
+2024-03-28 15:32:19,386 - INFO - Exiting...

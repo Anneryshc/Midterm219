@@ -1,7 +1,6 @@
 """
 Test de comandos.
 """
-
 import logging
 import pytest
 from app import App
