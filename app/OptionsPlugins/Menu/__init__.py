@@ -1,6 +1,6 @@
 import os
 import sys
-import logging  # Agregar logging
+import logging  # Add logging
 from app.CommandLogging import CommandHandler
 from app.CommandLogging import Command
 
@@ -11,15 +11,15 @@ class MenuCommand(Command):
 def show_menu():
     command_handler = CommandHandler()
 
-    # Obtener la lista de carpetas en la carpeta 'plugins'
+    # Get the list of folders in the 'plugins' folder
     plugin_folders = [folder for folder in os.listdir('app/OptionsPlugins') if os.path.isdir(os.path.join('app/OptionsPlugins', folder))]
 
-    # Registrar el encabezado "Available commands:"
+    # Log the header "Available commands:"
     logging.info("Available commands:")
 
-    # Escribir los comandos del menú en sys.stdout
+    # Write the menu commands to sys.stdout
     for plugin_folder in plugin_folders:
-        # Ignorar el directorio __pycache__ dentro de la carpeta menu
+        # Ignore the __pycache__ directory inside the menu folder
         if plugin_folder != "__pycache__":
             command = f" - {plugin_folder}"
             sys.stdout.write(command + '\n')

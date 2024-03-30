@@ -15,20 +15,20 @@ class MultiplicationCommand(Command):
             num1 = float(input("Enter the first number: "))
             num2 = float(input("Enter the second number: "))
             
-            # Registro de la operación de multiplicación iniciada
+            # Logging the multiplication operation start
             print("Performing multiplication...")
             logging.info("Performing multiplication...")
             
             result = num1 * num2
             
-            # Registro del resultado de la multiplicación
+            # Logging the result of multiplication
             print(f"The multiplication of {num1} and {num2} is : {result}")
             logging.info(f"The multiplication of {num1} and {num2} is : {result}")
             
-            return result  # Devolver el resultado de la multiplicación
+            return result  # Returning the result of multiplication
             
         except ValueError:
-            # Registro de error en caso de entrada no válida
+            # Logging error in case of invalid input
             print("Error: Please enter valid numbers.")
             logging.error("Error: Please enter valid numbers.")
 

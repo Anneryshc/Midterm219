@@ -1,5 +1,5 @@
 """
-Test de comandos.
+Test for commands.
 """
 import logging
 import pytest
@@ -7,21 +7,25 @@ from app import App
 
 @pytest.fixture
 def app():
-    """Fixture para instanciar la aplicación."""
+    """
+    Fixture to instantiate the application.
+    """
     return App()
 
 def test_app_start_exit_command(app, monkeypatch, caplog):
-    """Test que verifica que la aplicación inicie y salga correctamente."""
-    # Configura el nivel de logging para capturar registros
+    """
+    Test to verify that the application starts and exits correctly.
+    """
+    # Set the logging level to capture logs
     caplog.set_level(logging.INFO)
 
-    # Simula que el usuario ingresa 'exit'
+    # Simulate user input 'exit'
     monkeypatch.setattr('builtins.input', lambda _: 'exit')
-    # Ejecuta la aplicación y verifica que se lance la excepción SystemExit
+    # Execute the application and verify that SystemExit exception is raised
     with pytest.raises(SystemExit):
         app.start()
 
-    # Captura los registros generados durante la ejecución
+    # Capture the logs generated during execution
     logs = caplog.text
-    # Verifica si la salida y los registros contienen el mensaje de salida esperado
+    # Check if the output and logs contain the expected exit message
     assert "Exiting..." in logs

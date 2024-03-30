@@ -16,24 +16,24 @@ class Addition(Command):
             num2 = float(input("Enter the second number: "))
             
             if num1 < 0 or num2 < 0:
-                # Registro de advertencia para números negativos
+                # Warning message for negative numbers
                 print("Warning: Performing addition with negative numbers.")
                 logging.warning("Performing addition with negative numbers.")
             
-            # Registro de la operación de suma iniciada
+            # Log the start of addition operation
             print("Performing addition...")
             logging.info("Performing addition...")
             
             result = num1 + num2
             
-            # Registro del resultado de la suma
+            # Log the result of addition
             print(f"The addition of {num1} and {num2} is : {result}")
             logging.info(f"The addition of {num1} and {num2} is : {result}")
             
-            return result  # Devolver el resultado de la suma
+            return result  # Return the result of addition
             
         except ValueError:
-            # Registro de error en caso de entrada no válida
+            # Log error for invalid input
             print("Error: Please enter valid numbers.")
             logging.error("Invalid input: Please enter valid numbers.")
 
