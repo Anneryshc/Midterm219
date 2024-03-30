@@ -20,17 +20,17 @@ def mock_input(monkeypatch):
 
 def test_app_menu_command(capsys, caplog):
     """Test para verificar el menú de la aplicación."""
-    # Configurar el logger
+    # Configure the logger
     caplog.set_level(logging.INFO)
 
-    # Ejecutar la función show_menu()
+    # Execute the show_menu() function
     show_menu()
 
-    # Capturar la salida y los registros
+    # Capture output and logs
     captured = capsys.readouterr()
     logs = caplog.text
 
-    # Verificar si la salida y los registros contienen los comandos esperados
+   # Check if the output and logs contain the expected commands
     assert "Available commands:" in logs
     assert " - Addition" in captured.out
     assert " - Division" in captured.out
@@ -40,136 +40,136 @@ def test_app_menu_command(capsys, caplog):
     assert " - Subtraction" in captured.out
 
 def test_addition_command(capfd, monkeypatch):
-    """Test para el comando de suma."""
-    # Simulamos que el usuario ingresa dos números
+    """Test for the addition command."""
+    # We simulate that the user enters two numbers
     inputs = iter(['5', '7'])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-    # Ejecutamos el comando de suma
+    # We execute the addition command
     Addition().execute()
 
-    # Capturamos la salida de la aplicación
+    # We capture the output of the application
     captured = capfd.readouterr()
 
-    # Verificamos si la suma se realizó correctamente y el resultado se imprimió
+    # We check if the addition was performed correctly and the result was printed
     assert "The addition of 5.0 and 7.0 is : 12.0\n" in captured.out, "The addition was not done correctly"
 
 def test_addition_command_negative_numbers(capfd, monkeypatch):
-    """Test para el comando de suma con números negativos."""
-    # Simulamos que el usuario ingresa dos números negativos
+    """Test for the addition command with negative numbers."""
+    # We simulate that the user enters two negative numbers
     inputs = iter(['-5', '-7'])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-    # Ejecutamos el comando de suma
+    # We execute the addition command
     Addition().execute()
 
-    # Capturamos la salida de la aplicación
+    # We capture the output of the application
     captured = capfd.readouterr()
 
-    # Verificamos si la suma se realizó correctamente y el resultado se imprimió
+    # We check if the addition was performed correctly and the result was printed
     assert "The addition of -5.0 and -7.0 is : -12.0\n" in captured.out, "The addition of negative numbers was not done correctly"
 
 
 def test_subtraction_command_valid_input(capfd, monkeypatch):
-    """Test para el comando de resta con entrada válida."""
-    # Simulamos que el usuario ingresa dos números
+    """Test for the subtraction command with valid input."""
+    # We simulate that the user enters two numbers
     inputs = iter(['5', '3'])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-    # Ejecutamos el comando de resta
+    # We execute the subtraction command
     SubtractionCommand().execute()
 
-    # Capturamos la salida de la aplicación
+    # We capture the output of the application
     captured = capfd.readouterr()
 
-    # Mensaje de la resta esperado, incluyendo el resultado
+    # Expected subtraction message, including the result
     expected_output = "The subtraction of 5.0 and 3.0 is : 2.0"
 
-    # Verificamos si la resta se realizó correctamente y el resultado se imprimió
+    # We check if the subtraction was performed correctly and the result was printed
     assert expected_output in captured.out, f"Se esperaba '{expected_output}', pero se obtuvo '{captured.out}'"
 
 def test_subtraction_command_invalid_input(capfd, monkeypatch, caplog):
-    """Test para el comando de resta con entrada inválida."""
-    # Configurar el logger
+    """Test for subtraction command with invalid input."""
+    # Configure the logger
     caplog.set_level(logging.ERROR)
 
-    # Simulamos que el usuario ingresa entradas inválidas
+    # We simulate that the user enters invalid entries
     inputs = iter(['invalid', '3'])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-    # Ejecutamos el comando de resta
+    # We execute the subtraction command
     SubtractionCommand().execute()
 
-    # Capturamos los registros del logger
+    # We capture the logger logs
     logs = caplog.text
 
-    # Verificamos si se generó el mensaje de error esperado
+    # We check if the expected error message was generated
     assert "Error: Please enter valid numbers." in logs
 
 def test_division_command_valid_input(capfd, monkeypatch, mock_input, caplog):
-    """Test para el comando de división con entrada válida."""
-    # Simulamos que el usuario ingresa dos números válidos
+    """Test for the division command with valid input."""
+    # We simulate that the user enters two valid numbers
     mock_input.write('6\n3\n')
     mock_input.seek(0)
 
-    # Ejecutamos el comando de división
+    # We execute the division command
     DivisionCommand().execute()
 
-    # Capturamos la salida de la aplicación
+   # We capture the output of the application
     captured = capfd.readouterr()
 
     # Verificamos si la división se realizó correctamente y el resultado se imprimió
     assert "The division of 6.0 and 3.0 is : 2.0" in captured.out
 
 def test_division_command_invalid_input(capfd, monkeypatch, mock_input, caplog):
-    """Test para el comando de división con entrada inválida."""
-    # Configurar el logger
+    """Test for division command with invalid input."""
+    # Configure the logger
     caplog.set_level(logging.ERROR)
 
-    # Simulamos que el usuario ingresa una entrada inválida seguida de un número válido
+    # We simulate the user entering an invalid entry followed by a valid number
     mock_input.write('invalid\n3\n')
     mock_input.seek(0)
 
-    # Ejecutamos el comando de división
+    # We execute the division command
     DivisionCommand().execute()
 
-    # Capturamos los registros del logger
+    # We capture the logger logs
     logs = caplog.text
 
-    # Verificamos si se generó el mensaje de error esperado
+  # We check if the expected error message was generated
     assert "Please enter valid numbers." in logs
     expected_message = "Please enter valid numbers."
     assert expected_message in logs
 
 def test_multiplication_command(capfd, monkeypatch):
-    """Test para el comando de multiplicación."""
-    # Simulamos que el usuario ingresa dos números
+    """Test for the multiplication command."""
+    # We simulate that the user enters two numbers
     inputs = iter(['5', '7'])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-    # Ejecutamos el comando de multiplicación
+    # We execute the multiplication command
     MultiplicationCommand().execute()
 
-    # Capturamos la salida de la aplicación
+    # We capture the output of the application
     captured = capfd.readouterr()
 
-    # Verificamos si la multiplicación se realizó correctamente y el resultado se imprimió
+    # We check if the multiplication was performed correctly and the result was printed
     assert "The multiplication of 5.0 and 7.0 is : 35.0\n" in captured.out, "The multiplication was not done correctly"
 
 def test_multiplication_command_invalid_input(capfd, monkeypatch, caplog):
     """Test para el comando de multiplicación con entrada inválida."""
-    # Configurar el logger
+    # Configure the logger
     caplog.set_level(logging.ERROR)
 
-    # Simulamos que el usuario ingresa un valor inválido seguido de un número válido
+    # We simulate the user entering an invalid value followed by a valid number
     inputs = iter(['invalid', '3'])
     monkeypatch.setattr('builtins.input', lambda _: next(inputs))
 
-    # Ejecutamos el comando de multiplicación
+    # We execute the multiplication command
     MultiplicationCommand().execute()
 
-    # Capturamos los registros del logger
+    # We capture the logger logs
     logs = caplog.text
 
-    # Verificamos si se generó el mensaje de error esperado
+   # We check if the expected error message was generated
     assert "Error: Please enter valid numbers." in logs
